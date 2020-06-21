@@ -32,3 +32,6 @@ set hlsearch
 set smartcase
 set ignorecase
 set incsearch
+
+" Set clipboard to X's CLIPBOARD buffer
+set clipboard=unnamedplus
