@@ -37,22 +37,22 @@
 
 
 !! Set Xresources colors 
-*.foreground:   FOREGROUND
-*.background:   BACKGROUND
-*.cursorColor:  FOREGROUND
-*.color0:       c00
-*.color8:       c08
-*.color1:       c01
-*.color9:       c09
-*.color2:       c02
-*.color10:      c10
-*.color3:       c03
-*.color11:      c11
-*.color4:       c04
-*.color12:      c12
-*.color5:       c05
-*.color13:      c13
-*.color6:       c06
-*.color14:      c14
-*.color7:       c07
-*.color15:      c15
+*foreground:   FOREGROUND
+*background:   BACKGROUND
+*cursorColor:  FOREGROUND
+*color0:       c00
+*color8:       c08
+*color1:       c01
+*color9:       c09
+*color2:       c02
+*color10:      c10
+*color3:       c03
+*color11:      c11
+*color4:       c04
+*color12:      c12
+*color5:       c05
+*color13:      c13
+*color6:       c06
+*color14:      c14
+*color7:       c07
+*color15:      c15
