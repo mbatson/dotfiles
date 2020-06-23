@@ -5,3 +5,5 @@ alias pms='sudo pacman -S'
 alias pmsyu='sudo pacman -Syu'
 
 alias grep='grep --colour=auto'
+
+alias rmt='mv --force -t ~/.local/share/Trash/files/ '
