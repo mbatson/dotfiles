@@ -345,8 +345,8 @@ bar {
 
 #                      border  backgr. text
         focused_workspace  $term_background $term_background $term_foreground
-        active_workspace   $term_background $term_background $term_color11
-        inactive_workspace $term_background $term_background $term_color12
+        active_workspace   $term_background $term_background $term_color8
+        inactive_workspace $term_background $term_background $term_color8
         binding_mode       $term_background $term_color15 $term_background
         urgent_workspace   $term_background $term_color15 $term_background
     }
@@ -358,8 +358,8 @@ bindsym $mod+m bar mode toggle
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
   client.focused          $term_background $term_background $term_foreground $term_color15 $term_color8
-  client.focused_inactive $term_background $term_background $term_color12 $term_color15
-  client.unfocused        $term_background $term_background $term_color12 $term_color15
+  client.focused_inactive $term_background $term_background $term_color8 $term_color15
+  client.unfocused        $term_background $term_background $term_color8 $term_color15
   client.urgent           $term_color15 $term_color15 $term_background $term_color15
   client.placeholder      $term_background $term_background $term_color12 $term_color15
 
