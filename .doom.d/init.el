@@ -181,3 +181,6 @@
        :config
        ;;literate
        (default +bindings +smartparens))
+
+;; Set line movement to visual line movement. This is a temporary fix until issue hlissner/doom-emacs#2447 and emacs-evil/evil#1168 is fixed.
+(setq evil-respect-visual-line-mode t)
