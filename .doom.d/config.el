@@ -61,3 +61,4 @@
 ;; Turn on visual-line-mode for soft-wrapping
 ;;(add-hook 'markdown-mode-hook 'visual-line-mode)
 ;;(add-hook 'markdown-mode-hook #'+word-wrap-mode)
+
