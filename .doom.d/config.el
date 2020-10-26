@@ -22,7 +22,7 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(setq doom-font (font-spec :family "Source Code Pro" :size 14 :weight 'normal))
+(setq doom-font (font-spec :family "Source Code Pro" :size 15 :weight 'normal))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -62,3 +62,6 @@
 ;;(add-hook 'markdown-mode-hook 'visual-line-mode)
 ;;(add-hook 'markdown-mode-hook #'+word-wrap-mode)
 
+;; Keybinding for opening buffer clone in another window.
+;; This allows independent folding in each window while working in the same buffer.
+(map! :leader :desc "Clone indirect buffer" "b c" #'clone-indirect-buffer-other-window)
