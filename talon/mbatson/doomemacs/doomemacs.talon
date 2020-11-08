@@ -49,3 +49,27 @@ doom window jump:
     key(space)
     key(w)
     key(ctrl-w)
+
+###
+# Buffer control
+###
+
+buffer next:
+    key(space)
+    key(b)
+    key(])
+
+buffer previous:
+    key(space)
+    key(b)
+    key([)
+
+buffer switch:
+    key(space)
+    key(b)
+    key(b)
+
+buffer i buffer:
+    key(space)
+    key(b)
+    key(i)
