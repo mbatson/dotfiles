@@ -1,0 +1,10 @@
+#+TITLE: Talon Config Documentation
+
+* Installation
+Note: The folder "mbatson" is not necessary. It is only being used to keep my personal commands seperated from others' configs that I want to use concurrently. All these files can simply be dropped in ~.talon/user/~ without ~mbatson/~ and will work the same.
+** Microsoft Windows
+This directory should be placed in:
+~C:\Users\%USERNAME%\AppData\Roaming\Talon\user\~
+** Linux
+This directory should be placed in:
+~~/.talon/user/~
