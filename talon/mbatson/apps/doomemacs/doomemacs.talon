@@ -74,6 +74,30 @@ buffer i buffer:
     key(b)
     key(i)
 
+buffer kill:
+    key(space)
+    key(b)
+    key(d)
+
+buffer window kill:
+    key(space)
+    key(b)
+    key(D)
+
+###
+# Find file
+###
+
+find file:
+    key(space)
+    key(f)
+    key(f)
+
+find file other window:
+    key(space)
+    key(f)
+    key(o)
+
 ###
 # Workspaces
 ###

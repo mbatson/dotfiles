@@ -2,9 +2,13 @@ title: /.py/
 mode: command
 -
 
-assign: " = "
-equal to: " == "
-colon slap:
+is assigned: " = "
+is equal to: " == "
+is not equal to: " != "
+
+state function: "def "
+
+co slap:
     key(end)
     key(:)
     key(enter)
