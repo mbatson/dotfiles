@@ -66,3 +66,6 @@
 ;; Keybinding for opening buffer clone in another window.
 ;; This allows independent folding in each window while working in the same buffer.
 (map! :leader :desc "Clone indirect buffer" "b c" #'clone-indirect-buffer-other-window)
+
+(map! :leader :desc "Find file other window" "f o" #'find-file-other-window)
+(map! :leader :desc "Kill buffer and window" "b D" #'kill-buffer-and-window)
