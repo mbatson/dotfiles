@@ -73,3 +73,27 @@ buffer i buffer:
     key(space)
     key(b)
     key(i)
+
+###
+# Workspaces
+###
+
+workspace show:
+    key(space)
+    key(tab)
+    key(tab)
+
+workspace one:
+    key(space)
+    key(tab)
+    key(1)
+
+workspace two:
+    key(space)
+    key(tab)
+    key(2)
+
+workspace three:
+    key(space)
+    key(tab)
+    key(3)
