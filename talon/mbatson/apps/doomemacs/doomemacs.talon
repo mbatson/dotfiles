@@ -4,6 +4,8 @@ title: /Doom Emacs/
 mode: command
 -
 
+okay: key(escape)
+
 ###
 # Vim-style auto completion with company
 ###
@@ -64,10 +66,19 @@ buffer previous:
     key(b)
     key([)
 
-buffer switch:
+buffer select:
     key(space)
     key(b)
     key(b)
+
+buffer global [select]:
+    key(space)
+    key(b)
+    key(B)
+
+buffer switch:
+    key(space)
+    key(`)
 
 buffer i buffer:
     key(space)
@@ -85,8 +96,12 @@ buffer window kill:
     key(D)
 
 ###
-# Find file
+# Files
 ###
+
+file save:
+    insert(":w")
+    key(enter)
 
 find file:
     key(space)
