@@ -103,7 +103,7 @@ file save:
     insert(":w")
     key(enter)
 
-find file:
+file open:
     key(space)
     key(f)
     key(f)
