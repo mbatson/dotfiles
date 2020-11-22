@@ -1,5 +1,7 @@
-# Commands for playing white on lichess.org
-# Commands correspond to algebraic notation (e.g. "bat three" = b3 square)
+# Commands for playing white on lichess.org.
+# Commands correspond to algebraic notation (e.g. "bat three" = b3 square).
+# Coordinates configured for 1920 x 1080 screen resolution.
+# Adjust the board size until commands are hitting the centre of the correct squares.
 
 title: /lichess.org/
 mode: user.lichess_white
