@@ -1,4 +1,4 @@
-# Mode for playing black on lichess.org
+# Commands for playing black on lichess.org
 # Commands correspond to algebraic notation (e.g. "bat three" = b3 square)
 
 title: /lichess.org/
