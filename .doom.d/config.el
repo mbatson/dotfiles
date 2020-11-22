@@ -69,3 +69,6 @@
 
 (map! :leader :desc "Find file other window" "f o" #'find-file-other-window)
 (map! :leader :desc "Kill buffer and window" "b D" #'kill-buffer-and-window)
+
+;; Set default mode based on file type
+(add-to-list 'auto-mode-alist '("\\.talon\\'" . text-mode))
