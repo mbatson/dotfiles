@@ -50,3 +50,6 @@
 ;(unpin! t)
 
 (package! org-ref)
+
+(package! talonscript-mode
+  :recipe (:host github :repo "jcaw/talonscript-mode"))
