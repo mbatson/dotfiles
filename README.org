@@ -1,7 +1,7 @@
 * Dotfiles
 This repo is a combination of configuration files from my Linux machine (currently running Manjaro i3 community edition) and Windows 10 machine.
 
-Windows 10 is currently my daily driver on which I run:
+Windows 10 is currently my daily driver, on which I run:
 - [[https://github.com/hlissner/doom-emacs][Doom Emacs]]
 - [[https://talonvoice.com/][Talon Voice]]
  
