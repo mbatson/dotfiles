@@ -4,7 +4,7 @@ These are my personal talon commands, which I am running concurrently with [[htt
 Note: The folder "mbatson" is not necessary. It is only being used to keep my personal commands seperated from others' configs that I want to use concurrently. All these files can simply be dropped in ~.talon/user/~ without ~mbatson/~ and will work the same.
 *** Microsoft Windows
 Place all files in:
-~C:\Users\%USERNAME%\AppData\Roaming\Talon\user\~
+=C:\Users\%USERNAME%\AppData\Roaming\Talon\user\=
 *** Linux
 Place all files in:
-~\~/.talon/user/~
+=~/.talon/user/=
