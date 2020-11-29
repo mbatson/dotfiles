@@ -1,7 +1,7 @@
 * Talon Config Documentation
 These are my personal talon commands, which I am running concurrently with [[https://github.com/knausj85/knausj_talon][knausj_talon]].
 ** Installation
-Note: The folder "mbatson" is not necessary. It is only being used to keep my personal commands seperated from others' configs that I want to use concurrently. All these files can simply be dropped in ~.talon/user/~ without ~mbatson/~ and will work the same.
+Note: The folder "mbatson" is not necessary. It is only being used to keep my personal commands seperated from others' configs that I want to use concurrently. All these files can simply be dropped in =.talon/user/= without =mbatson/= and will work the same.
 *** Microsoft Windows
 Place all files in:
 =C:\Users\%USERNAME%\AppData\Roaming\Talon\user\=
