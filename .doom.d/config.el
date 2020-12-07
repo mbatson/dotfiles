@@ -76,4 +76,14 @@
 (map! :leader :desc "Kill buffer and window" "b D" #'kill-buffer-and-window)
 
 ;; Set default mode based on file type
+;; Currently unnecessary due to running talonscript-mode
 ;(add-to-list 'auto-mode-alist '("\\.talon\\'" . text-mode))
+
+;; Set buffer-local value of fill-column for specific modes.
+;; fill-column specifies the column at which lines will wrap when filling
+;; regions/paragraphs or in visual-fill-column-mode.
+(setq-hook! '(org-mode-hook markdown-mode-hook)
+  fill-column 90)
+
+;; Enable visual-fill-column-mode in org-mode and markdown-mode
+(add-hook! '(org-mode-hook markdown-mode-hook) #'visual-fill-column-mode)
