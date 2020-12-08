@@ -26,7 +26,13 @@
     (setq doom-font (font-spec :family "Source Code Pro" :size 31 :weight 'normal))
   (setq doom-font (font-spec :family "Source Code Pro" :size 15 :weight 'normal)))
 
-(setq doom-variable-pitch-font (font-spec :family "Source Serif Pro" :size 12))
+(setq doom-variable-pitch-font (font-spec :family "Source Serif Pro" :size 18))
+
+;; Let mixed-pitch-mode inherit doom-variable-pitch-font's height
+(setq mixed-pitch-set-height t)
+
+;; Enable mixed-pitch-mode by default in modes suited for writing
+(add-hook! '(org-mode-hook markdown-mode-hook) #'mixed-pitch-mode)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
