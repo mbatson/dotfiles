@@ -76,7 +76,8 @@
 
 ;; Keybinding for opening buffer clone in another window.
 ;; This allows independent folding in each window while working in the same buffer.
-(map! :leader :desc "Clone indirect buffer" "b c" #'clone-indirect-buffer-other-window)
+(map! :leader :desc "Clone indirect buffer" "b c"
+      #'clone-indirect-buffer-other-window)
 
 (map! :leader :desc "Find file other window" "f o" #'find-file-other-window)
 (map! :leader :desc "Kill buffer and window" "b D" #'kill-buffer-and-window)
@@ -91,5 +92,65 @@
 (setq-hook! '(org-mode-hook markdown-mode-hook)
   fill-column 90)
 
-;; Enable visual-fill-column-mode in org-mode and markdown-mode
-(add-hook! '(org-mode-hook markdown-mode-hook) #'visual-fill-column-mode)
+;; Set the desired line length (in char columns) to be displayed.
+;; This will be used to dynamically calculate margin widths that will always
+;; keep the displayed width at this size even if the frame width changes
+;; (unless width of frame < 'mb/displayed-line-length').
+(defvar mb/displayed-line-length 90 "Desired line length (in char columns).")
+
+(defun mb/margins-on ()
+  "Turn centering margins on."
+  ;; First, make sure visual-fill-column-mode is off.
+  (visual-fill-column-mode -1)
+  ;; Set margin widths so that the screen space always equals
+  ;; mb/displayed-line-length, plus 3 to account for the space needed by line
+  ;; numbers.
+  (setq left-margin-width (/ (- (window-total-width)
+                                (+ mb/displayed-line-length 3)) 2))
+  (setq right-margin-width (/ (- (window-total-width)
+                                 (+ mb/displayed-line-length 3)) 2))
+  ;; Refresh screen to show new margin width.
+  (set-window-buffer nil (current-buffer)))
+
+(defun mb/margins-off ()
+  "Turn centering margins off."
+  (setq left-margin-width 0)
+  (setq right-margin-width 0)
+  ;; If in specified mode, switch visual-fill-column-mode on.
+  (if (or (equal major-mode 'org-mode) (equal major-mode 'markdown-mode))
+      (visual-fill-column-mode 1))
+  ;; Refresh screen to show new margin width.
+  (set-window-buffer nil (current-buffer)))
+
+(defun mb/auto-set-margins ()
+  "Turn mode on or off based on amount of windows."
+  (cond ((= (count-windows 'ignore-minibuffer) 1)
+         (mb/margins-on))
+        (t
+         (mb/margins-off))))
+
+(define-minor-mode mb/center-margins-mode
+  "Minor mode to center text in the current buffer."
+  :init-value nil
+  :global nil
+  (cond (mb/center-margins-mode
+         (add-hook 'window-configuration-change-hook 'mb/auto-set-margins
+                   'append 'local)
+         (mb/auto-set-margins)
+         )
+        (t
+         (remove-hook 'window-configuration-change-hook 'mb/auto-set-margins 'local)
+         (mb/margins-off)))
+  )
+
+(add-hook! ('org-mode-hook 'markdown-mode-hook) :append #'mb/center-margins-mode)
+
+(defun mb/reset-margins (&rest args)
+  "Set margins to zero to avoid size error when calling split-window."
+  (setq left-margin-width 0)
+  (setq right-margin-width 0)
+  (set-window-buffer nil (current-buffer)))
+
+;; Turn off margins before splitting window to avoid size too small for
+;; splitting error.
+(advice-add 'evil-window-vsplit :before #'mb/reset-margins)
