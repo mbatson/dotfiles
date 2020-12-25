@@ -82,6 +82,28 @@
 (map! :leader :desc "Find file other window" "f o" #'find-file-other-window)
 (map! :leader :desc "Kill buffer and window" "b D" #'kill-buffer-and-window)
 
+;; Character insertion keybindings
+(map! :desc "Em dash" :nvi "M-i m" (lambda () (interactive)
+                                     (insert (char-from-name "EM DASH"))))
+(map! :desc "En dash" :nvi "M-i n" (lambda () (interactive)
+                                     (insert (char-from-name "EN DASH"))))
+(map! :desc "Apostrophe / Right single quotation mark"
+      :nvi "M-i '"
+      (lambda () (interactive)
+        (insert (char-from-name "RIGHT SINGLE QUOTATION MARK"))))
+(map! :desc "Left single quotation mark"
+      :nvi "M-i M-'"
+      (lambda () (interactive)
+        (insert (char-from-name "LEFT SINGLE QUOTATION MARK"))))
+(map! :desc "Right double quotation mark"
+      :nvi "M-i \""
+      (lambda () (interactive)
+        (insert (char-from-name "RIGHT DOUBLE QUOTATION MARK"))))
+(map! :desc "Left double quotation mark"
+      :nvi "M-i M-\""
+      (lambda () (interactive)
+        (insert (char-from-name "LEFT DOUBLE QUOTATION MARK"))))
+
 ;; Set default mode based on file type
 ;; Currently unnecessary due to running talonscript-mode
 ;(add-to-list 'auto-mode-alist '("\\.talon\\'" . text-mode))
