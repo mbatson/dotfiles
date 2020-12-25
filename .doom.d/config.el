@@ -26,7 +26,7 @@
     (setq doom-font (font-spec :family "Source Code Pro" :size 31 :weight 'normal))
   (setq doom-font (font-spec :family "Source Code Pro" :size 15 :weight 'normal)))
 
-(setq doom-variable-pitch-font (font-spec :family "Source Serif Pro" :size 18))
+(setq doom-variable-pitch-font (font-spec :family "Source Sans Pro" :size 18))
 
 ;; Let mixed-pitch-mode inherit doom-variable-pitch-font's height
 (setq mixed-pitch-set-height t)
