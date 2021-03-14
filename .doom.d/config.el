@@ -177,3 +177,7 @@
 ;; Turn off margins before splitting window to avoid size too small for
 ;; splitting error.
 (advice-add 'evil-window-vsplit :before #'mb/reset-margins)
+
+
+;; org-agenda setup
+(setq org-agenda-files (list "~/OneDrive/Documents/Uni/"))
