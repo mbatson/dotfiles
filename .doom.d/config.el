@@ -42,10 +42,6 @@
 ;; Themes I like: doom-one, doom-moonlight, doom-manegarm, doom-outrun-electric
 (setq doom-theme 'doom-moonlight)
 
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
-
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'visual)
@@ -179,5 +175,16 @@
 (advice-add 'evil-window-vsplit :before #'mb/reset-margins)
 
 
-;; org-agenda setup
-(setq org-agenda-files (list "~/OneDrive/Documents/Uni/"))
+;; org-mode config
+(setq org-directory "~/OneDrive/Documents/org/")
+(setq org-default-notes-file "~/OneDrive/Documents/org/notes.org")
+(setq org-agenda-files (list "~/OneDrive/Documents/Uni/"
+                             "~/OneDrive/Documents/org/todo.org"))
+
+;; custom org-capture templates
+(after! org
+  (add-to-list 'org-capture-templates
+             '("u" "Uni Task" entry
+               (file+headline "~/OneDrive/Documents/Uni/uni-planner.org" "Todo")
+               "* TODO %?"
+               :prepend t :kill-buffer t)))
