@@ -22,11 +22,12 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(if (string= (system-name) "OREB") ; If on system with hostname "OREB"
-    (setq doom-font (font-spec :family "Source Code Pro" :size 31 :weight 'normal))
-  (setq doom-font (font-spec :family "Source Code Pro" :size 15 :weight 'normal)))
-
-(setq doom-variable-pitch-font (font-spec :family "Source Sans Pro" :size 18))
+(cond ((string= (system-name) "OREB")
+       (setq doom-font (font-spec :family "Source Code Pro" :size 32 :weight 'normal))
+       (setq doom-variable-pitch-font (font-spec :family "Source Sans Pro" :size 36)))
+      (t
+       (setq doom-font (font-spec :family "Source Code Pro" :size 15 :weight 'normal))
+       (setq doom-variable-pitch-font (font-spec :family "Source Sans Pro" :size 18))))
 
 ;; Let mixed-pitch-mode inherit doom-variable-pitch-font's height
 (setq mixed-pitch-set-height t)
