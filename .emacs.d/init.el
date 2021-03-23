@@ -6,6 +6,7 @@
 ;; Rebind org-todo (t) to Enter key.
 ;; Set org-todo states.
 ;; Install yasnippet and copy over snippets.
+;; Rebind insert keybindings to evil insert mode.
 
 ;; User info.
 (setq user-full-name "Matthew Batson"
@@ -54,6 +55,9 @@
 	(file+headline "~/OneDrive/Documents/Uni/uni-planner.org" "Todo")
 	"* TODO %?"
 	:prepend t :kill-buffer t)))
+
+;; Set default encoding of .fountain files to utf-8.
+(modify-coding-system-alist 'file ".fountain'" 'utf-8)
 
 
 ;;; Package Management.
@@ -235,6 +239,9 @@
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 
+;; Fountain-mode for screenwriting in the Fountain markup language.
+(use-package fountain-mode)
+
 ;; Undo package for undo in evil-mode.
 ;; Use by setting evil-undo-system variable.
 (use-package undo-fu)
@@ -276,7 +283,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(undo-fu-session evil-collection doom-modeline doom-themes evil-org evil-surround evil-leader undo-fu which-key evil ivy-rich counsel diminish ivy use-package)))
+   '(fountain-mode undo-fu-session evil-collection doom-modeline doom-themes evil-org evil-surround evil-leader undo-fu which-key evil ivy-rich counsel diminish ivy use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
