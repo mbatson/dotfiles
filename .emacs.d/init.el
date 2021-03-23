@@ -21,7 +21,7 @@
 
 ;; Font Settings.
 (cond ((string= (system-name) "OREB")
-       (set-face-attribute 'default nil :font "Source Code Pro" :height 150))
+       (set-face-attribute 'default nil :font "Source Code Pro" :height 130))
       (t
        (set-face-attribute 'default nil :font "Source Code Pro" :height 110)))
 
