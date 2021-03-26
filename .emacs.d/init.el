@@ -1,6 +1,5 @@
 ;;; Config todo.
 ;; Merge my auto margin functions and settings.
-;; Make ivy and swiper search fuzzy.
 ;; Enable parenthesis match highlighting.
 ;; Enable variable pitch fonts in text-modes and install mixed-pitch.
 ;; Rebind org-todo (t) to Enter key.
@@ -126,8 +125,10 @@
 	 ("C-d" . ivy-reverse-i-search-kill))
   :custom
   (ivy-count-format "(%d/%d) ")
-  (ivy-use-virtual-buffers t)
-  :config (ivy-mode 1))
+  :config
+  ;; Set regex matching behaviour.
+  (setq ivy-re-builders-alist '((t . ivy--regex-ignore-order)))
+  (ivy-mode 1))
 
 (use-package ivy-rich
   :after ivy
