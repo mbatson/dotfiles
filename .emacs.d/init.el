@@ -1,5 +1,4 @@
 ;;; Config todo.
-;; Merge my auto margin functions and settings.
 ;; Enable parenthesis match highlighting.
 ;; Enable variable pitch fonts in text-modes and install mixed-pitch.
 ;; Rebind org-todo (t) to Enter key.
@@ -255,6 +254,17 @@
   :config
   (global-undo-fu-session-mode 1))
 
+(use-package visual-fill-column
+  :custom
+  (visual-fill-column-width 80)
+  (visual-fill-column-center-text t)
+  :config
+  ;; Turn visual-fill-column-mode on whenever visual-line-mode is active.
+  (add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
+
+  ;; Refresh margins automatically when adjusting text scale.
+  (advice-add 'text-scale-adjust :after #'visual-fill-column-adjust))
+
 ;; which-key
 (use-package which-key
   :diminish which-key-mode
@@ -284,7 +294,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(fountain-mode undo-fu-session evil-collection doom-modeline doom-themes evil-org evil-surround evil-leader undo-fu which-key evil ivy-rich counsel diminish ivy use-package)))
+   '(visual-fill-column-mode visual-fill-column fountain-mode undo-fu-session evil-collection doom-modeline doom-themes evil-org evil-surround evil-leader undo-fu which-key evil ivy-rich counsel diminish ivy use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
