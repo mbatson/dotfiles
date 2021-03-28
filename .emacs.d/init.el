@@ -47,11 +47,15 @@
 (setq org-agenda-files (list "~/OneDrive/Documents/Uni/"
                              "~/OneDrive/Documents/org/todo.org"))
 
+;; Begin org-agenda view on current day.
+(setq org-agenda-start-on-weekday nil)
+(setq org-agenda-start-day "today")
+
 ;; Custom org-capture templates.
 (setq org-capture-templates
       '(("u" "Uni Task" entry
 	(file+headline "~/OneDrive/Documents/Uni/uni-planner.org" "Todo")
-	"* TODO %?"
+	"* TODO %^{Task title} %^g\n DEADLINE: %^{DEADLINE}t%?"
 	:prepend t :kill-buffer t)))
 
 ;; Set default encoding of .fountain files to utf-8.
@@ -197,6 +201,8 @@
     ;; Org keybindings.
     "o a" 'org-agenda
     "o c" 'org-capture
+    "o s p" 'org-set-property
+    "o s t" 'org-set-tags-command
     ;; Quit keybindings.
     "q q" 'save-buffers-kill-terminal
     ;; Search keybindings.
@@ -283,6 +289,7 @@
     "i \"" "Right double quotation mark"
     "i M-\"" "left double quotation mark"
     "o" "org"
+    "o s" "set"
     "q" "quit"
     "s" "search"
     "w" "window")
