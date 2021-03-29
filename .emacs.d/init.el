@@ -13,6 +13,9 @@
 ;; Set default language encoding system to UTF-8.
 (set-language-environment "UTF-8")
 
+;; Set default major mode when creating a new buffer.
+(setq-default major-mode 'text-mode)
+
 ;; Visual Settings.
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
