@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: mdsourceblock
+# key: /md
+# --
+#+BEGIN_SRC md :tangle yes
+$1
+#+END_SRC

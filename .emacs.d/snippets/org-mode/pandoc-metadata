@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: pandoc-metadata
+# key: /pandoc-metadata
+# --
+#+TITLE: $1
+#+AUTHOR: ${2:Matthew Batson}
+#+LANGUAGE: ${3:en-AU}
+
+# Set conversion of special strings (e.g. ... to …, -- to –, --- to —).
+#+OPTIONS: -:t
+
+# Set conversion of smart quotes (e.g. 'foo' to ‘foo’, "foo" to “foo”).
+#+OPTIONS: ':t
+
+$0
