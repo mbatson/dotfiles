@@ -10,6 +10,9 @@
 (setq user-full-name "Matthew Batson"
       user-mail-address "mbatson@protonmail.com")
 
+;; Set default language encoding system to UTF-8.
+(set-language-environment "UTF-8")
+
 ;; Visual Settings.
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
