@@ -3,7 +3,6 @@
 ;; Enable variable pitch fonts in text-modes and install mixed-pitch.
 ;; Rebind org-todo (t) to Enter key.
 ;; Set org-todo states.
-;; Install yasnippet and copy over snippets.
 ;; Rebind insert keybindings to evil insert mode.
 
 ;; User info.
