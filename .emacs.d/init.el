@@ -164,7 +164,9 @@
   ;; global-evil-leader-mode should be enabled before evil-mode
   ;; so that evil-leader is enabled in initial buffers like *scratch*.
   (global-evil-leader-mode 1)
-  :config (evil-mode 1))
+  :config
+  (evil-define-key 'motion org-mode-map (kbd "RET") 'org-todo)
+  (evil-mode 1))
 
 (use-package evil-collection
   :after evil
@@ -243,9 +245,8 @@
 					insert
 					navigation
 					additional
-					shift
-					todo
-					heading)))))
+					calendar
+					return)))))
   :config
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
