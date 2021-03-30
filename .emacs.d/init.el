@@ -1,7 +1,6 @@
 ;;; Config todo.
 ;; Enable parenthesis match highlighting.
 ;; Enable variable pitch fonts in text-modes and install mixed-pitch.
-;; Rebind org-todo (t) to Enter key.
 ;; Set org-todo states.
 ;; Rebind insert keybindings to evil insert mode.
 
