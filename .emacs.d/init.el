@@ -62,6 +62,11 @@
 	"* TODO %^{Task title} %^g\n DEADLINE: %^{DEADLINE}t%?"
 	:prepend t :kill-buffer t)))
 
+;; Set org-todo states.
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "|" "DONE(d)")
+	(sequence "|" "CANCELLED(c)")))
+
 ;; Set default encoding of .fountain files to utf-8.
 (modify-coding-system-alist 'file ".fountain'" 'utf-8)
 
