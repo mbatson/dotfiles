@@ -1,7 +1,6 @@
 ;;; Config todo.
 ;; Enable parenthesis match highlighting.
 ;; Enable variable pitch fonts in text-modes and install mixed-pitch.
-;; Set org-todo states.
 ;; Rebind insert keybindings to evil insert mode.
 
 ;; User info.
@@ -169,7 +168,6 @@
   ;; so that evil-leader is enabled in initial buffers like *scratch*.
   (global-evil-leader-mode 1)
   :config
-  (evil-define-key 'motion org-mode-map (kbd "RET") 'org-todo)
   (evil-mode 1))
 
 (use-package evil-collection
@@ -214,6 +212,7 @@
     "o c" 'org-capture
     "o s p" 'org-set-property
     "o s t" 'org-set-tags-command
+    "o t" 'org-todo
     ;; Quit keybindings.
     "q q" 'save-buffers-kill-terminal
     ;; Search keybindings.
