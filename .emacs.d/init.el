@@ -69,6 +69,10 @@
 ;; Set default encoding of .fountain files to utf-8.
 (modify-coding-system-alist 'file ".fountain'" 'utf-8)
 
+;; Set TAB key to complete the thing at point if appropriate,
+;; otherwise indent the current line.
+(setq tab-always-indent 'complete)
+
 
 ;;; Package Management.
 
