@@ -1,7 +1,6 @@
 ;;; Config todo.
 ;; Enable parenthesis match highlighting.
 ;; Enable variable pitch fonts in text-modes and install mixed-pitch.
-;; Rebind insert keybindings to evil insert mode.
 
 ;; User info.
 (setq user-full-name "Matthew Batson"
@@ -171,7 +170,22 @@
   ;; global-evil-leader-mode should be enabled before evil-mode
   ;; so that evil-leader is enabled in initial buffers like *scratch*.
   (global-evil-leader-mode 1)
+
   :config
+  ;; Character insertion keybindings.
+  (evil-define-key 'insert 'global (kbd "M-i m")
+    (lambda () (interactive) (insert (char-from-name "EM DASH"))))
+  (evil-define-key 'insert 'global (kbd "M-i n")
+    (lambda () (interactive) (insert (char-from-name "EN DASH"))))
+  (evil-define-key 'insert 'global (kbd "M-i '")
+    (lambda () (interactive) (insert (char-from-name "RIGHT SINGLE QUOTATION MARK"))))
+  (evil-define-key 'insert 'global (kbd "M-i M-'")
+    (lambda () (interactive) (insert (char-from-name "LEFT SINGLE QUOTATION MARK"))))
+  (evil-define-key 'insert 'global (kbd "M-i \"")
+    (lambda () (interactive) (insert (char-from-name "RIGHT DOUBLE QUOTATION MARK"))))
+  (evil-define-key 'insert 'global (kbd "M-i M-\"")
+    (lambda () (interactive) (insert (char-from-name "LEFT DOUBLE QUOTATION MARK"))))
+
   (evil-mode 1))
 
 (use-package evil-collection
@@ -204,13 +218,6 @@
     "f o" 'find-file-other-window
     "f r" 'counsel-recentf
     "f s" 'save-buffer
-    ;; Insert keybindings.
-    "i m" (lambda () (interactive) (insert (char-from-name "EM DASH")))
-    "i n" (lambda () (interactive) (insert (char-from-name "EN DASH")))
-    "i '" (lambda () (interactive) (insert (char-from-name "RIGHT SINGLE QUOTATION MARK")))
-    "i M-'" (lambda () (interactive) (insert (char-from-name "LEFT SINGLE QUOTATION MARK")))
-    "i \"" (lambda () (interactive) (insert (char-from-name "RIGHT DOUBLE QUOTATION MARK")))
-    "i M-\"" (lambda () (interactive) (insert (char-from-name "LEFT DOUBLE QUOTATION MARK")))
     ;; Org keybindings.
     "o a" 'org-agenda
     "o c" 'org-capture
@@ -294,18 +301,18 @@
     "b" "buffer"
     "d" "desktop"
     "f" "file"
-    "i" "insert"
-    "i m" "Em dash"
-    "i n" "En dash"
-    "i '" "Right single quotation mark / Apostrophe"
-    "i M-'" "Left single quotation mark"
-    "i \"" "Right double quotation mark"
-    "i M-\"" "left double quotation mark"
     "o" "org"
     "o s" "set"
     "q" "quit"
     "s" "search"
     "w" "window")
+  (which-key-add-keymap-based-replacements evil-insert-state-map
+    "M-i m" "Em dash"
+    "M-i n" "En dash"
+    "M-i '" "Right single quotation mark / Apostrophe"
+    "M-i M-'" "Left single quotation mark"
+    "M-i \"" "Right double quotation mark"
+    "M-i M-\"" "left double quotation mark")
   (which-key-mode 1))
 
 (use-package yasnippet
