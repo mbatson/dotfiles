@@ -40,6 +40,9 @@
 ;; Maximise frames by default.
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+;; Highlight matching parentheses.
+(show-paren-mode 1)
+
 ;; Make ESC quit prompts.
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
