@@ -1,5 +1,4 @@
 ;;; Config todo.
-;; Enable parenthesis match highlighting.
 ;; Enable variable pitch fonts in text-modes and install mixed-pitch.
 
 ;; User info.
