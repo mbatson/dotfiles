@@ -270,11 +270,17 @@
 ;; Fountain-mode for screenwriting in the Fountain markup language.
 (use-package fountain-mode)
 
+(use-package markdown-mode
+  :init
+  ;; Set the external Markdown processor.
+  (setq markdown-command "pandoc"))
+
 ;; Enable the use of a mix of variable pitch and fixed pitch fonts.
 (use-package mixed-pitch
   :config
   (setq mixed-pitch-set-height t)
-  (add-hook 'text-mode-hook 'mixed-pitch-mode))
+  (add-hook 'org-mode-hook 'mixed-pitch-mode)
+  (add-hook 'markdown-mode-hook 'mixed-pitch-mode))
 
 ;; Undo package for undo in evil-mode.
 ;; Use by setting evil-undo-system variable.
@@ -333,7 +339,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(mixed-pitch yasnippet visual-fill-column-mode visual-fill-column fountain-mode undo-fu-session evil-collection doom-modeline doom-themes evil-org evil-surround evil-leader undo-fu which-key evil ivy-rich counsel diminish ivy use-package)))
+   '(markdown-mode mixed-pitch yasnippet visual-fill-column-mode visual-fill-column fountain-mode undo-fu-session evil-collection doom-modeline doom-themes evil-org evil-surround evil-leader undo-fu which-key evil ivy-rich counsel diminish ivy use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
