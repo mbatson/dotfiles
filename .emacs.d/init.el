@@ -229,6 +229,7 @@
     ;; Quit keybindings.
     "q q" 'save-buffers-kill-terminal
     ;; Search keybindings.
+    "s r" 'counsel-rg
     "s s" 'swiper
     ;; Window keybindings.
     "w s" 'evil-window-split
