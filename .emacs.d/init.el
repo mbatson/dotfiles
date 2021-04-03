@@ -245,6 +245,8 @@
     ;; Search keybindings.
     "s r" 'counsel-rg
     "s s" 'swiper
+    ;; Version control keybindings.
+    "v d" 'vc-diff
     ;; Window keybindings.
     "w s" 'evil-window-split
     "w v" 'evil-window-vsplit
@@ -334,6 +336,7 @@
     "o s" "set"
     "q" "quit"
     "s" "search"
+    "v" "version control"
     "w" "window")
   (which-key-add-keymap-based-replacements evil-insert-state-map
     "M-i m" "Em dash"
