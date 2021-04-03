@@ -8,6 +8,20 @@
 ;; Set default major mode when creating a new buffer.
 (setq-default major-mode 'text-mode)
 
+;; Backup configuration.
+(defvar --backup-directory (concat user-emacs-directory "backups"))
+(setq backup-directory-alist `(("." . ,--backup-directory)))
+(setq make-backup-files t	 ;; Ensure backups are turned on.
+      version-control t          ;; Use version numbers for backups.
+      kept-new-versions 10       ;; Number of newest versions to keep.
+      kept-old-versions 0        ;; Number of oldest versions to keep.
+      delete-old-versions t      ;; Don't ask to delete excess backup versions.
+      backup-by-copying t        ;; Copy all files, don't rename them.
+      vc-make-backup-files t)	 ;; Backup version-controlled files.
+
+;; Ensure sure auto-save is turned on.
+(setq auto-save-default t)
+
 ;; Visual Settings.
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
