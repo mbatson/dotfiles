@@ -110,7 +110,7 @@
 
 ;; Theme Settings.
 ;; Themes I like: doom-one, doom-moonlight, doom-manegarm, doom-outrun-electric
-;; doom-plain-dark, doom-plain.
+;; doom-plain-dark, doom-plain, doom-flatwhite.
 (use-package doom-themes
   :config
   ;; Global settings (defaults).
@@ -244,7 +244,9 @@
     "q q" 'save-buffers-kill-terminal
     ;; Search keybindings.
     "s r" 'counsel-rg
-    "s s" 'swiper
+    "s s" 'swiper-isearch
+    ;; Theme keybindings.
+    "t l" 'counsel-load-theme
     ;; Version control keybindings.
     "v d" 'vc-diff
     ;; Window keybindings.
@@ -336,6 +338,7 @@
     "o s" "set"
     "q" "quit"
     "s" "search"
+    "t" "theme"
     "v" "version control"
     "w" "window")
   (which-key-add-keymap-based-replacements evil-insert-state-map
