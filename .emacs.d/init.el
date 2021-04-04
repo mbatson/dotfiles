@@ -289,14 +289,19 @@
 ;; Fancy auto-completion everywhere using a wrapper around built-in
 ;; dabbrev-expand.
 (use-package fancy-dabbrev
-  :bind (:map evil-insert-state-map
-	      ("TAB" . fancy-dabbrev-expand-or-indent)
-	      ;; Override dabbrev-expand (no longer needed) for
-	      ;; indent-for-tab-command (gives standard completion).
-	      ;; BIND TAB LOCALLY FOR EMACS-LISP-MODE TO indent-for-tab-command.
-	      ("M-/" . indent-for-tab-command) 
-	      ("<backtab>" . fancy-dabbrev-backward))
   :config
+  (evil-define-key 'insert 'global (kbd "<tab>") 'fancy-dabbrev-expand-or-indent)
+  (evil-define-key 'insert 'global (kbd "<backtab>") 'fancy-dabbrev-backward)
+  ;; Keep indent-for-tab-command bound to TAB in emacs-lisp-mode.
+  ;; This is preferred to retain completion of Emacs functions and
+  ;; variables.
+  (evil-define-key 'insert emacs-lisp-mode-map (kbd "<tab>") 'indent-for-tab-command)
+  ;; Override dabbrev-expand with
+  ;; indent-for-tab-command. dabbrev-expand is replaced by
+  ;; fancy-dabbrev-expand-or-indent on TAB and I want to retain an
+  ;; explicit binding for indent-for-tab-command.
+  (evil-define-key 'insert 'global (kbd "M-/") 'indent-for-tab-command)
+
   (setq fancy-dabbrev-preview-context 'everywhere)
 
   ;; Let dabbrev searches ignore case and expansions preserve case.
