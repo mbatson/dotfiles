@@ -340,7 +340,7 @@
 
 (use-package visual-fill-column
   :custom
-  (visual-fill-column-width 80)
+  (visual-fill-column-width 70)
   (visual-fill-column-center-text t)
   :config
   ;; Turn visual-fill-column-mode on whenever visual-line-mode is active.
