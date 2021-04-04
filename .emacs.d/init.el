@@ -286,6 +286,28 @@
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 
+;; Fancy auto-completion everywhere using a wrapper around built-in
+;; dabbrev-expand.
+(use-package fancy-dabbrev
+  :bind (:map evil-insert-state-map
+	      ("TAB" . fancy-dabbrev-expand-or-indent)
+	      ;; Override dabbrev-expand (no longer needed) for
+	      ;; indent-for-tab-command (gives standard completion).
+	      ;; BIND TAB LOCALLY FOR EMACS-LISP-MODE TO indent-for-tab-command.
+	      ("M-/" . indent-for-tab-command) 
+	      ("<backtab>" . fancy-dabbrev-backward))
+  :config
+  (setq fancy-dabbrev-preview-context 'everywhere)
+
+  ;; Let dabbrev searches ignore case and expansions preserve case.
+  ;; TRY CASE REPLACE TRUE
+  (setq dabbrev-case-distinction nil)
+  (setq dabbrev-case-fold-search t)
+  (setq dabbrev-case-replace nil)
+
+  (global-fancy-dabbrev-mode 1))
+  
+
 ;; Fountain-mode for screenwriting in the Fountain markup language.
 (use-package fountain-mode)
 
@@ -360,7 +382,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(markdown-mode mixed-pitch yasnippet visual-fill-column-mode visual-fill-column fountain-mode undo-fu-session evil-collection doom-modeline doom-themes evil-org evil-surround evil-leader undo-fu which-key evil ivy-rich counsel diminish ivy use-package)))
+   '(fancy-dabbrev markdown-mode mixed-pitch yasnippet visual-fill-column-mode visual-fill-column fountain-mode undo-fu-session evil-collection doom-modeline doom-themes evil-org evil-surround evil-leader undo-fu which-key evil ivy-rich counsel diminish ivy use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
