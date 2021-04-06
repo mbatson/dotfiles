@@ -64,6 +64,14 @@
 (setq org-agenda-files (list "~/OneDrive/Documents/Uni/"
                              "~/OneDrive/Documents/org/todo.org"))
 
+(setq org-hide-emphasis-markers t)
+(add-hook 'org-mode-hook 'org-indent-mode)
+;; Indent heading levels by as little as possible to avoid cramping
+;; body text.
+(setq org-indent-indentation-per-level 1)
+;; Keep empty lines visible when folding headings.
+(setq org-cycle-separator-lines 1)
+
 ;; Begin org-agenda view on current day.
 (setq org-agenda-start-on-weekday nil)
 (setq org-agenda-start-day "today")
