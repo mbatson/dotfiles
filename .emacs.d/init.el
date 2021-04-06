@@ -303,7 +303,7 @@
   (setq fancy-dabbrev-preview-context 'everywhere)
 
   ;; Let dabbrev searches ignore case and expansions preserve case.
-  ;; TRY CASE REPLACE TRUE
+  ;; TODO: try case replace true
   (setq dabbrev-case-distinction nil)
   (setq dabbrev-case-fold-search t)
   (setq dabbrev-case-replace nil)
