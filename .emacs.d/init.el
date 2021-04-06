@@ -33,10 +33,12 @@
 ;; Font Settings.
 (cond ((string= (system-name) "OREB")
        (set-face-attribute 'default nil :family "Source Code Pro" :height 130)
-       (set-face-attribute 'variable-pitch nil :family "Source Sans Pro" :height 1.1))
+       (set-face-attribute 'fixed-pitch nil :family "Source Code Pro" :height 1.0)
+       (set-face-attribute 'variable-pitch nil :family "Source Serif Pro" :height 1.1))
       (t
        (set-face-attribute 'default nil :family "Source Code Pro" :height 110)
-       (set-face-attribute 'variable-pitch nil :family "Source Sans Pro" :height 1.1)))
+       (set-face-attribute 'fixed-pitch nil :family "Source Code Pro" :height 1.0)
+       (set-face-attribute 'variable-pitch nil :family "Source Serif Pro" :height 1.1)))
 
 ;; Modeline.
 (column-number-mode 1)
@@ -44,7 +46,6 @@
 ;; Line Numbers.
 (setq display-line-numbers-type 'visual)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(add-hook 'text-mode-hook 'display-line-numbers-mode)
 
 ;; Line mode.
 (add-hook 'text-mode-hook 'visual-line-mode)
@@ -116,15 +117,26 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-;; Theme Settings.
-;; Themes I like: doom-one, doom-moonlight, doom-manegarm, doom-outrun-electric
-;; doom-plain-dark, doom-plain, doom-flatwhite.
+(use-package poet-theme
+  :config
+  (setq poet-theme-variable-headers nil)
+  (setq poet-theme-variable-pitch-multiplier 1.1)
+  (add-hook 'text-mode-hook (lambda () (variable-pitch-mode 1)))
+  (load-theme 'poet-dark t))
+
+;; Make org-mode play nicely with variable-pitch fonts.
+(use-package org-variable-pitch
+  :config
+  (add-hook 'org-mode-hook 'org-variable-pitch-minor-mode))
+
+;; Doom themes I like: doom-one, doom-moonlight, doom-manegarm,
+;; doom-outrun-electric doom-plain-dark, doom-plain, doom-flatwhite.
 (use-package doom-themes
   :config
   ;; Global settings (defaults).
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-moonlight t)
+  ;(load-theme 'doom-moonlight t)
 
   ;; Enable flashing mode-line on errors.
   (doom-themes-visual-bell-config)
@@ -393,7 +405,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(fancy-dabbrev markdown-mode mixed-pitch yasnippet visual-fill-column-mode visual-fill-column fountain-mode undo-fu-session evil-collection doom-modeline doom-themes evil-org evil-surround evil-leader undo-fu which-key evil ivy-rich counsel diminish ivy use-package)))
+   '(org-variable-pitch fancy-dabbrev markdown-mode mixed-pitch yasnippet visual-fill-column-mode visual-fill-column fountain-mode undo-fu-session evil-collection doom-modeline doom-themes evil-org evil-surround evil-leader undo-fu which-key evil ivy-rich counsel diminish ivy use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
