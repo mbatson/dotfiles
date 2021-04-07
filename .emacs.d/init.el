@@ -72,6 +72,8 @@
 (setq org-indent-indentation-per-level 1)
 ;; Keep empty lines visible when folding headings.
 (setq org-cycle-separator-lines 1)
+;; Prevent M-RET splitting the line.
+(setq org-M-RET-may-split-line '((default . nil)))
 
 ;; Begin org-agenda view on current day.
 (setq org-agenda-start-on-weekday nil)
