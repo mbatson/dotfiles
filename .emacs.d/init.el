@@ -74,6 +74,8 @@
 (setq org-cycle-separator-lines 1)
 ;; Prevent M-RET splitting the line.
 (setq org-M-RET-may-split-line '((default . nil)))
+;; Don't open org-mode files folded.
+(setq org-startup-folded nil)
 
 ;; Begin org-agenda view on current day.
 (setq org-agenda-start-on-weekday nil)
