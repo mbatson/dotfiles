@@ -130,6 +130,7 @@
 
 ;; Make org-mode play nicely with variable-pitch fonts.
 (use-package org-variable-pitch
+  :diminish 'org-variable-pitch-minor-mode
   :config
   (add-hook 'org-mode-hook 'org-variable-pitch-minor-mode))
 
@@ -147,15 +148,6 @@
   
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
-
-;; doom-modeline requires all-the-icons font pack.
-(use-package doom-modeline
-  :init
-  (doom-modeline-mode 1)
-  :config
-  ;; Enable word count in major modes determined by
-  ;; doom-modeline-continuous-word-count-modes.
-  (setq doom-modeline-enable-word-count t))
 
 ;; Install diminish (hides minor modes from the mode line).
 ;; Can be toggled with :diminish flag in use-package call).
@@ -185,11 +177,12 @@
 
 (use-package ivy-rich
   :after ivy
+  :diminish 'ivy-rich-mode
   :config (ivy-rich-mode 1))
 
 (use-package counsel
   :after ivy
-  :diminish counsel-mode
+  :diminish 'counsel-mode
   :config (counsel-mode 1))
 
 (use-package swiper
@@ -296,6 +289,7 @@
 
 (use-package evil-org
   :after org
+  :diminish 'evil-org-mode
   :hook ((org-mode . evil-org-mode)
 	 (org-agenda-mode . evil-org-mode)
 	 ;; Sets of keybindings to enable.
@@ -313,6 +307,7 @@
 ;; Fancy auto-completion everywhere using a wrapper around built-in
 ;; dabbrev-expand.
 (use-package fancy-dabbrev
+  :diminish 'fancy-dabbrev-mode
   :config
   (evil-define-key 'insert 'global (kbd "<tab>") 'fancy-dabbrev-expand-or-indent)
   (evil-define-key 'insert 'global (kbd "<backtab>") 'fancy-dabbrev-backward)
@@ -345,6 +340,7 @@
 
 ;; Enable the use of a mix of variable pitch and fixed pitch fonts.
 (use-package mixed-pitch
+  :diminish 'mixed-pitch-mode
   :config
   (setq mixed-pitch-set-height t)
   (add-hook 'org-mode-hook 'mixed-pitch-mode)
@@ -400,6 +396,7 @@
   (which-key-mode 1))
 
 (use-package yasnippet
+  :diminish 'yas-minor-mode
   :config
   (yas-global-mode 1))
 
