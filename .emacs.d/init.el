@@ -22,13 +22,20 @@
 ;; Ensure sure auto-save is turned on.
 (setq auto-save-default t)
 
-;; Visual Settings.
+;; Don't insert tabs when automatically indenting.
+(setq-default indent-tabs-mode nil)
+
+;; Prompt for "y or n" rather than "yes or no".
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; Miscellaneous visual settings.
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (tooltip-mode -1)
 (menu-bar-mode -1)
 (setq visible-bell t)
 (setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
 
 ;; Font Settings.
 (cond ((string= (system-name) "OREB")
