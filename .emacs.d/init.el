@@ -10,6 +10,10 @@
 ;; Set default major mode when creating a new buffer.
 (setq-default major-mode 'text-mode)
 
+;; Keep all customisations made by Emacs in a separate file.
+(setq custom-file (concat user-emacs-directory "custom.el"))
+(load custom-file 'noerror)
+
 ;; Backup configuration.
 (defvar --backup-directory (concat user-emacs-directory "backups"))
 (setq backup-directory-alist `(("." . ,--backup-directory)))
@@ -416,17 +420,3 @@
   :diminish 'yas-minor-mode
   :config
   (yas-global-mode 1))
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(org-variable-pitch fancy-dabbrev markdown-mode mixed-pitch yasnippet visual-fill-column-mode visual-fill-column fountain-mode undo-fu-session evil-collection doom-modeline doom-themes evil-org evil-surround evil-leader undo-fu which-key evil ivy-rich counsel diminish ivy use-package)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
