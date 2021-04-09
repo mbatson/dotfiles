@@ -39,6 +39,14 @@
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
 
+;; Display file path in frame title.
+;; Thanks to deerpig's .emacs:
+;; https://github.com/deerpig/dot-emacs/blob/master/dot-emacs.org
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
+
 ;; Font Settings.
 (cond ((string= (system-name) "OREB")
        (set-face-attribute 'default nil :family "Source Code Pro" :height 130)
