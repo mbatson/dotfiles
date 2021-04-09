@@ -3,7 +3,9 @@
       user-mail-address "mbatson@protonmail.com")
 
 ;; Set default language encoding system to UTF-8.
-(set-language-environment "UTF-8")
+(set-language-environment 'english)
+(set-default-coding-systems 'utf-8)
+(prefer-coding-system 'utf-8)
 
 ;; Set default major mode when creating a new buffer.
 (setq-default major-mode 'text-mode)
