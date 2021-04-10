@@ -342,14 +342,10 @@
 
   (setq fancy-dabbrev-preview-context 'everywhere)
 
-  ;; Let dabbrev searches ignore case and expansions preserve case.
-  ;; TODO: try case replace true
-  (setq dabbrev-case-distinction nil)
-  (setq dabbrev-case-fold-search t)
-  (setq dabbrev-case-replace nil)
+  ;; Make dabbrev expansion searches case sensitive.
+  (setq dabbrev-case-fold-search nil)
 
-  (global-fancy-dabbrev-mode 1))
-  
+  (global-fancy-dabbrev-mode 1))  
 
 ;; Fountain-mode for screenwriting in the Fountain markup language.
 (use-package fountain-mode)
