@@ -25,7 +25,7 @@
       backup-by-copying t        ;; Copy all files, don't rename them.
       vc-make-backup-files t)	 ;; Backup version-controlled files.
 
-;; Ensure sure auto-save is turned on.
+;; Ensure auto-save is turned on.
 (setq auto-save-default t)
 
 ;; Don't insert tabs when automatically indenting.
