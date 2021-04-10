@@ -282,7 +282,8 @@
     "q q" 'save-buffers-kill-terminal
     ;; Search keybindings.
     "s r" 'counsel-rg
-    "s s" 'swiper-isearch
+    "s s" 'swiper
+    "/" 'swiper
     ;; Theme keybindings.
     "t l" 'counsel-load-theme
     ;; Version control keybindings.
