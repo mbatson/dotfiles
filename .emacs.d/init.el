@@ -57,7 +57,7 @@
        (set-face-attribute 'fixed-pitch nil :family "Source Code Pro" :height 1.0)
        (set-face-attribute 'variable-pitch nil :family "Source Serif Pro" :height 1.1))
       (t
-       (set-face-attribute 'default nil :family "Source Code Pro" :height 110)
+       (set-face-attribute 'default nil :family "Source Code Pro" :height 120)
        (set-face-attribute 'fixed-pitch nil :family "Source Code Pro" :height 1.0)
        (set-face-attribute 'variable-pitch nil :family "Source Serif Pro" :height 1.1)))
 
