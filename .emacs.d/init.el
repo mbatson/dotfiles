@@ -10,6 +10,9 @@
 ;; Set default major mode when creating a new buffer.
 (setq-default major-mode 'text-mode)
 
+;; Set default directory for buffers without their own file location.
+(setq default-directory "~/")
+
 ;; Keep all customisations made by Emacs in a separate file.
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file 'noerror)
