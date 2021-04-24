@@ -4,7 +4,7 @@
 ---
 title: $1
 author: ${2:Matthew Batson (211282573)}
-date: \today
+#date: \today
 bibliography: $3 # Add --citeproc when running Pandoc
 csl: ${4:harvard-deakin-university-modified.csl}
 reference-section-title: ${5:References}
@@ -12,13 +12,15 @@ lang: en-AU
 toc: false
 # LaTeX settings:
 fontfamily: ${6:charter}
-indent: ${7:true}
-fontsize: ${8:12}pt
-#linestretch: 1.5 # Line spacing
+indent: ${7:false} # Use \noindent to turn off on specific paragraphs
+fontsize: ${0:12}pt
 papersize: a4
+#linestretch: 1.5 # Line spacing
+#geometry: [inner=40mm, outer=40mm, top=33mm, bottom=39mm, bindingoffset=0mm]
 #header-includes:
 #  - \usepackage{float} # Keep figures where they are in the text
 #  - \floatplacement{figure}{H} # Keep figures where they are in the text
-# docx settings:
-reference-doc: ${9:deakin-reference-charter.docx}
+#  - \usepackage{ragged2e} # Left-align text
+#  - \setlength{\RaggedRightParindent}{\parindent} # Only needed if indent: true
+#  - \RaggedRight # Left-align text
 ---
