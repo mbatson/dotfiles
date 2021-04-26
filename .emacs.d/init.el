@@ -242,6 +242,8 @@
     (lambda () (interactive) (insert (char-from-name "RIGHT DOUBLE QUOTATION MARK"))))
   (evil-define-key 'insert 'global (kbd "M-i M-\"")
     (lambda () (interactive) (insert (char-from-name "LEFT DOUBLE QUOTATION MARK"))))
+  ;; Insert snippet interactively.
+  (evil-define-key 'insert 'global (kbd "M-i y") 'yas-insert-snippet)
 
   (evil-mode 1))
 
@@ -305,7 +307,10 @@
     "w K" 'evil-window-move-very-top
     "w L" 'evil-window-move-far-right
     "w d" 'delete-window
-    "w m" 'delete-other-windows))
+    "w m" 'delete-other-windows
+    ;; Yasnippet keybindings.
+    "y n" 'yas-new-snippet
+    "y v" 'yas-visit-snippet-file))
 
 (use-package evil-surround
   :after evil
@@ -406,7 +411,8 @@
     "s" "search"
     "t" "theme"
     "v" "version control"
-    "w" "window")
+    "w" "window"
+    "y" "yasnippet")
   (which-key-add-keymap-based-replacements evil-insert-state-map
     "M-i m" "Em dash"
     "M-i n" "En dash"
