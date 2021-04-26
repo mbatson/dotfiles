@@ -183,7 +183,7 @@
   :diminish ivy-mode
   :bind (("C-s" . swiper)
 	 :map ivy-minibuffer-map
-	 ("TAB" . ivy-alt-done)
+	 ("TAB" . ivy-partial-or-done)
 	 ("C-j" . ivy-next-line)
 	 ("C-k" . ivy-previous-line)
 	 :map ivy-switch-buffer-map
@@ -261,12 +261,16 @@
   :config
   (evil-leader/set-leader "<SPC>")
   (evil-leader/set-key
+    ;; Miscellaneous keybindings.
+    "." 'dired
     ;; Buffer keybindings.
     "`" (lambda () (interactive) (switch-to-buffer nil))
     "b s" 'save-buffer
-    "b b" 'ivy-switch-buffer
+    "b b" 'counsel-switch-buffer
+    "b o" 'counsel-switch-buffer-other-window
     "b c" 'clone-indirect-buffer-other-window
-    "b k" 'kill-buffer
+    "b i" 'ibuffer
+    "b k" 'kill-this-buffer
     "b x" 'kill-buffer-and-window
     ;; Desktop keybindings.
     "d c" 'desktop-clear
