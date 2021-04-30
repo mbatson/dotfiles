@@ -263,6 +263,7 @@
   (evil-leader/set-key
     ;; Miscellaneous keybindings.
     "." 'dired
+    "RET" 'counsel-bookmark
     ;; Buffer keybindings.
     "`" (lambda () (interactive) (switch-to-buffer nil))
     "b s" 'save-buffer
