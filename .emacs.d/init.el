@@ -230,6 +230,7 @@
   :config
   ;; Character insertion keybindings.
   ;; Note these bindings overwrite tab-to-tab-stop in insert mode.
+  (evil-define-key 'insert 'global (kbd "M-i RET") 'insert-char)
   (evil-define-key 'insert 'global (kbd "M-i m")
     (lambda () (interactive) (insert (char-from-name "EM DASH"))))
   (evil-define-key 'insert 'global (kbd "M-i n")
