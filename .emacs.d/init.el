@@ -285,7 +285,9 @@
     "f s" 'save-buffer
     ;; Org keybindings.
     "o a" 'org-agenda
+    "o b" 'org-toggle-checkbox
     "o c" 'org-capture
+    "o n" 'org-toggle-narrow-to-subtree
     "o s p" 'org-set-property
     "o s t" 'org-set-tags-command
     "o t" 'org-todo
