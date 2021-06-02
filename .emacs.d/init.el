@@ -149,7 +149,8 @@
   :config
   (setq poet-theme-variable-headers nil)
   (setq poet-theme-variable-pitch-multiplier 1.1)
-  (add-hook 'text-mode-hook (lambda () (variable-pitch-mode 1)))
+  (add-hook 'markdown-mode-hook (lambda () (variable-pitch-mode 1)))
+  (add-hook 'org-mode-hook (lambda () (variable-pitch-mode 1)))
   (load-theme 'poet-dark t))
 
 ;; Make org-mode play nicely with variable-pitch fonts.
