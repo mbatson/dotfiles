@@ -6,14 +6,14 @@ title: $1
 author: ${2:Matthew Batson (211282573)}
 #date: \today
 bibliography: $3 # Add --citeproc when running Pandoc
-csl: ${4:harvard-deakin-university-modified.csl}
+csl: ${4:deakin-university-harvard-2020.csl}
 reference-section-title: ${5:References}
-lang: en-AU
+lang: en-GB
 toc: false
 # LaTeX settings:
 fontfamily: ${6:charter}
 indent: ${7:false} # Use \noindent to turn off on specific paragraphs
-fontsize: ${0:12}pt
+fontsize: ${8:12}pt
 papersize: a4
 #linestretch: 1.5 # Line spacing
 #geometry: [inner=40mm, outer=40mm, top=33mm, bottom=39mm, bindingoffset=0mm]
@@ -24,3 +24,5 @@ papersize: a4
 #  - \setlength{\RaggedRightParindent}{\parindent} # Only needed if indent: true
 #  - \RaggedRight # Left-align text
 ---
+
+$0
