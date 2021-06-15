@@ -275,6 +275,7 @@
     "b i" 'ibuffer
     "b k" 'kill-this-buffer
     "b x" 'kill-buffer-and-window
+    "b r" 'revert-buffer
     ;; Desktop keybindings.
     "d c" 'desktop-clear
     "d r" 'desktop-read
