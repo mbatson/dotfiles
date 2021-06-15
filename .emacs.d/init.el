@@ -244,6 +244,8 @@
     (lambda () (interactive) (insert (char-from-name "RIGHT DOUBLE QUOTATION MARK"))))
   (evil-define-key 'insert 'global (kbd "M-i M-\"")
     (lambda () (interactive) (insert (char-from-name "LEFT DOUBLE QUOTATION MARK"))))
+  (evil-define-key 'insert 'global (kbd "M-i .")
+    (lambda () (interactive) (insert (char-from-name "HORIZONTAL ELLIPSIS"))))
   ;; Insert snippet interactively.
   (evil-define-key 'insert 'global (kbd "M-i y") 'yas-insert-snippet)
 
@@ -429,7 +431,8 @@
     "M-i '" "Right single quotation mark / Apostrophe"
     "M-i M-'" "Left single quotation mark"
     "M-i \"" "Right double quotation mark"
-    "M-i M-\"" "left double quotation mark")
+    "M-i M-\"" "left double quotation mark"
+    "M-i ." "Ellipsis")
   (which-key-mode 1))
 
 (use-package yasnippet
