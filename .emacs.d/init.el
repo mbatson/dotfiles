@@ -290,6 +290,7 @@
     "f o" 'find-file-other-window
     "f r" 'counsel-recentf
     "f s" 'save-buffer
+    "f w" 'write-file
     ;; Org keybindings.
     "o a" 'org-agenda
     "o b" 'org-toggle-checkbox
