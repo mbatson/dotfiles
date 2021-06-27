@@ -1,5 +1,5 @@
 ! Source terminal colors
-#include ".xcolors/base16-rebecca"
+#include ".xcolors/base16-rebecca.Xresources"
 
 Xft.dpi:       96
 Xft.antialias: true
