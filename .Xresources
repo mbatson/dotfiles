@@ -1,5 +1,5 @@
 ! Source terminal colors
-#include "/home/matt/dotfiles/.xcolors/base16-rebecca"
+#include ".xcolors/base16-rebecca"
 
 Xft.dpi:       96
 Xft.antialias: true
