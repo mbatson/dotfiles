@@ -1,3 +1,8 @@
+" Must install and run base16-shell for base16 256 color themes to work
+" correctly.
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-default-dark
+
 syntax on
 set encoding=utf-8
 set showmode
