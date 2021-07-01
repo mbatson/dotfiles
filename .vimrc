@@ -24,9 +24,6 @@ set relativenumber
 set wrap
 " Avoid text wrapping in the middle of a word
 set linebreak
-" Remap j and k keys to move by screen line instead of buffer line
-nnoremap j gj
-nnoremap k gk
 
 " Automatically match indentation on new lines
 set autoindent
