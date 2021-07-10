@@ -145,9 +145,6 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-(use-package avy
-  :pin "melpa")
-
 (use-package poet-theme
   :config
   (setq poet-theme-variable-headers nil)
