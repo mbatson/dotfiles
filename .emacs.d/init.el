@@ -268,6 +268,7 @@
     ;; Miscellaneous keybindings.
     "." 'dired
     "RET" 'counsel-bookmark
+    "\"" 'counsel-evil-registers
     ;; Buffer keybindings.
     "`" (lambda () (interactive) (switch-to-buffer nil))
     "b s" 'save-buffer
